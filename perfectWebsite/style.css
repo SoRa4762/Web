@@ -1,0 +1,198 @@
+:root {
+  --background-color: rgb(5, 10, 24);
+  --border-color: rgb(2525, 255, 255, 0.1);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  /* background-color: rgb(5, 10, 24); */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+a,
+p,
+span {
+  font-family: "Rubik", "san-serif";
+  font-weight: 400;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav > .nav-section {
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 1rem;
+  border-left: 1px solid var(--border-color);
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-logo-section {
+  justify-content: flex-start;
+}
+#nav-logo-section > a > i {
+  font-size: 2.5rem;
+}
+
+#nav-link-section {
+  gap: 6rem;
+}
+
+#nav-social-section {
+  gap: 3rem;
+}
+
+#nav-logo-section,
+#nav-link-section {
+  flex-basis: calc(100% / 3);
+}
+
+#nav-social-section,
+#nav-contact-section {
+  flex-grow: 1;
+}
+
+main {
+  position: relative;
+  flex-grow: 1;
+  height: 100%;
+}
+
+article {
+  position: absolute;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  transition: transform 400ms ease;
+  /* top: 0; */
+  /* left: 0; */
+}
+
+.article-description-section,
+.article-nav-section {
+  border-left: 1px solid var(--border-color);
+}
+.article-nav-section,
+.article-title-section {
+  border-top: 1px solid var(--border-color);
+}
+
+main article:first-child .article-image-section {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-image: url("./images//wallpaperflare.com_wallpaper\ -\ 2022-06-16T111321.265.jpg");
+  background-size: cover;
+}
+main article:nth-child(2) .article-image-section {
+  background-image: url("./images/wallpaperflare.com_wallpaper\ -\ 2022-06-16T111329.106.jpg");
+  background-size: cover;
+}
+
+main article:nth-child(3) .article-image-section {
+  background-image: url("./images/wallpaperflare.com_wallpaper\ -\ 2022-06-16T111334.390.jpg");
+  background-size: cover;
+}
+
+main article:nth-child(4) .article-image-section {
+  background-image: url("./images/wallpaperflare.com_wallpaper\ -\ 2022-06-16T111343.366.jpg");
+  background-size: cover;
+}
+
+main article:nth-child(5) .article-image-section {
+  background-image: url("./images/wallpaperflare.com_wallpaper\ -\ 2022-06-16T111352.484.jpg");
+  background-size: cover;
+}
+
+/* .article-image-section > img {
+  object-fit: cover;
+  height: 100%;
+  width: 50%;
+} */
+
+.article-description-section {
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+  /* padding-top: 3rem; */
+}
+
+.article-title-section,
+.article-nav-section {
+  /* height: 100%; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2.7rem;
+}
+
+.article-nav-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.article-nav-button i {
+  font-size: 3.3rem;
+  color: white;
+}
+
+main article[data-status="inactive"] {
+  transform: translateX(-100%);
+}
+
+main article[data-status="after"] {
+  transform: translateX(100%);
+}
+main article[data-status="becoming-active-from-before"] {
+  transform: translateX(-100%);
+  transition: none;
+}
+
+main article[data-status="before"] {
+  transform: translateX(-100%);
+}
+main article[data-status="becoming-active-from-after"] {
+  transform: translateX(100%);
+  transition: none;
+}
+/* main article .article-image-section {
+  background-image: url("./images/wallpaperflare-cropped.jpg");
+  background-size: cover;
+}
+
+main article .article-image-section:nth-child(2) {
+  background-image: url("./images/wallpaperflare.com_wallpaper.jpg");
+  background-size: cover;
+}
+
+main article .article-image-section:nth-child(3) {
+  background-image: url("./images/wallpaperflare.com_wallpaper\ \(1\).jpg");
+  background-size: cover;
+}
+
+main article .article-image-section:nth-child(4) {
+  background-image: url("./images/wallpaperflare.com_wallpaper\ \(2\).jpg");
+  background-size: cover;
+} */
